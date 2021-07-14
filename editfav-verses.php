@@ -52,15 +52,7 @@
 	}
 
  ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Favorite Verses</title>
-	<link rel="stylesheet" href="assets/bootstrap5.0.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/styles/stylesheet.css">
-</head>
+<?php include "includes/header.php"; ?>
 <body>
 	<?php include "includes/navbar.php"; ?>
 	<div class="container-fluid">
@@ -93,9 +85,4 @@
 			</form>
 		</section>
 	</div>
-	
-	<script src="assets/script/jquery-3.6.0.min.js"></script>
-	<script src="assets/bootstrap5.0.2/js/bootstrap.min.js"></script>
-	<script src="assets/script/scripts.js"></script>
-</body>
-</html>
+	<?php include "includes/footer.php"; ?>
