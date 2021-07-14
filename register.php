@@ -28,7 +28,9 @@
 
 				if($user->create()){
 					Session::set_login($user->username);
-					header("Location: fav-verses.php");
+					Session::set_id($user->id);
+					$address = "fav-verses.php?user_id=" . urlencode(Session::get_id()) . "&page=1";
+					header("Location: " . $address);
 					exit();
 				} else {
 					Session::set('error_message', 'User not registered, Try again');
