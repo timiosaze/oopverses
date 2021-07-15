@@ -49,11 +49,11 @@ class User {
 		$email = $database->escape_string($email);
 		$password = $database->escape_string($password);
 		$sql = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
-		$row = $database->query($sql);
-		if($row->num_rows === 1){
-			if(password_verify($password, $row['password'])){
+		$row = $this->find_by_query($sql);
+		if(!empty($row)){
+			if(password_verify($password, $row[0]->password)){
 				$the_result = $this->find_by_query($sql);
-			}
+				}
 		}
 		return !empty($the_result) ? $the_result : false;
 	}
